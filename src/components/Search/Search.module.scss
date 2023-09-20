@@ -1,0 +1,34 @@
+@import '../../scss/variables';
+
+.search{
+    width: 200px;
+    position: relative;
+    
+    .input{
+        padding: 10px 16px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        background-color: #EFEFEF;
+    }
+    
+    .icon{
+        &__search{
+            width: 18px;
+            height: 18px;
+            opacity: 0.3;
+            position: absolute;
+            right: 16px;
+            top:10px
+        }
+        
+        &__close{
+            width: 18px;
+            height: 18px;
+            opacity: 0.3;
+            position: absolute;
+            right: 40px;
+            top:-8px;
+            cursor: pointer;  
+        }
+    }
+}

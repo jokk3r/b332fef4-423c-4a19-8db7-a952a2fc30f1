@@ -1,0 +1,17 @@
+.App{
+    position: relative;
+}
+.container{
+    width: 70vw;
+    margin: 0 auto;
+}
+.content{
+    &__title{}
+
+    &__items{
+      
+        width: 100%;
+      
+    }
+
+}

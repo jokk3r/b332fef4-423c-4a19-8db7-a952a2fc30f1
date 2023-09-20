@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './scss/app.scss';
+import { Routes, Route } from 'react-router-dom';
 
-function App() {
+import Home from './pages/Home';
+import Header from './components/Header/Header';
+import NotFound from './pages/NotFound';
+import Cart from './pages/Cart';
+
+const App = () => {
+  const [searchValue, setSearchValue] = useState('');
+
+  console.log(searchValue + 'inputchanged');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header searchValue={searchValue} setSearchValue={setSearchValue} />
+      <Routes>
+        <Route
+          path="/"
+          element={<Home searchValue={searchValue} setSearchValue={setSearchValue} />}
+        />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<NotFound />} />
+        {/*   <Route path="/" element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+        </Route> */}
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;
