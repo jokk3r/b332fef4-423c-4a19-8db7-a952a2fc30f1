@@ -5,9 +5,11 @@ import { addItem } from '../../redux/slices/cartSlice';
 import imgSmall from '../../assets/img/eventImgSmall.svg';
 import place from '../../assets/img/place.svg';
 import plus from '../../assets/img/plus.svg';
+import { Link } from 'react-router-dom';
 
 function EventBlock({ _id, startTime, endTime, flyerFront, title, venue }) {
   const clubName = venue.name;
+  const direction = venue.direction;
 
   const dispatch = useDispatch();
   const dateStart = new Date(startTime);
@@ -38,10 +40,12 @@ function EventBlock({ _id, startTime, endTime, flyerFront, title, venue }) {
         <img className={styles.event__img} src={flyerFront} alt="event" />
       </div>
       <div className={styles.event__info}>
-        <div className={styles.event__club}>
-          <img src={place} alt="place" />
-          <p className={styles.event__clubName}>{clubName}</p>
-        </div>
+        <Link to={direction} target="_blank">
+          <div className={styles.event__club}>
+            <img src={place} alt="place" />
+            <p className={styles.event__clubName}>{clubName}</p>
+          </div>
+        </Link>
         <div className={styles.event__date}>
           <p> {startTime ? `Start: ${dateStartConvert} ${timeStart}` : 'Better Call Saul'}</p>
           <p>{endTime ? `Finish: ${dateFinishConvert} ${timeFinish}` : `he'll get the details`}</p>
