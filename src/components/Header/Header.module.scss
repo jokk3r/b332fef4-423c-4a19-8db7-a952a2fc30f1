@@ -2,10 +2,26 @@
 
 
  .header {
-    padding: 14px 0 7px 0 ;
-    position: relative;
+    padding: 14px 30px 7px 30px;
     background-color: $blue;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    &__cart{
+      position: relative;
+
+    }
+    &__cartCount{
+      background-color: $red;
+      border: 2px solid #fff;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 1px 5px;
+      position: absolute;
+      right: -10px;
+      top: -10px;
+    }
   }
   

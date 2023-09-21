@@ -17,7 +17,7 @@ export const EventsMain = ({ date, events, searchValue, setSearchValue }) => {
   return (
     <div className={styles.events__main}>
       <h3 className={styles.events__date}>{dateConvert}</h3>
-      {eventsSearch}
+      <div className={styles.events__list}>{eventsSearch}</div>
     </div>
   );
 };

@@ -21,9 +21,6 @@ const App = () => {
         />
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<NotFound />} />
-        {/*   <Route path="/" element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
-        </Route> */}
       </Routes>
     </div>
   );

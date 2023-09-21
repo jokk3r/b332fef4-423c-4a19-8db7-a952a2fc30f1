@@ -1,7 +1,12 @@
+@import '../../scss/variables';
+
 .cart{
     &__item{
         display: flex;
-       
+        border: 1px solid $border;
+        background: $white;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.08);
+        margin-bottom: 16px;
     }
     &__imgBlock{
         width: 120px;
@@ -12,8 +17,63 @@
         width: 100%;
         height: 100%;
     }
-    &__item-info{
-
+   
+    &__info{
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        margin-left: 25px;
+        width:400px
+    }
+    &__date{
+        color: $blue;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+    &__title{
+        color: $black;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+    &__club{
+        display: flex;
+    }
+    &__clubName{
+        color: $black;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        margin-right: 5px;
+    }
+    &__right{
+        display: flex;
+    }
+    &__countImg{
+        padding: 11px;
+        border-radius: 30px;
+        border: 1px solid $border;
+    }
+    &__delete{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100%;
+    }
+    &__count{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 100%;
+    }
+    &__plus{
+        color: $black;
     }
 }
      

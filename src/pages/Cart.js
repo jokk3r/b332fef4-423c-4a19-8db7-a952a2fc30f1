@@ -2,36 +2,42 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { CartItem } from '../components/CartItem/CartItem';
+import { clearItems } from '../redux/slices/cartSlice';
+import CartEmpty from '../components/CartEmpty/CartEmpty';
+import left from '../assets/img/left.svg';
 
 const Cart = () => {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.cart.items);
+
+  const onClickRemoveAll = () => {
+    if (window.confirm('Are you sure you want to remove all items?')) {
+      dispatch(clearItems());
+    }
+  };
+  if (items.length === 0) {
+    return <CartEmpty />;
+  }
   return (
-    <div className="container ">
+    <div className="container">
       <div className="cart">
         <div className="cart__main">
-          <h2 className="cart__title"> Cart</h2>
-          {/*  <div onClick={onClickClear} className="cart__clear">
-          <img src={cross} alt="clear all items" />
-          <span>Clear all</span>
-        </div> */}
+          <div className="cart__header">
+            <Link className="button__back " to="/">
+              <img src={left} alt="back" />
+            </Link>
+            <h2 className="cart__title"> Cart</h2>
+          </div>
+          <div className="cart__deleteAll">
+            <p onClick={onClickRemoveAll}>delete all</p>
+          </div>
         </div>
-        <div className="content__items">
+        <div className="cart__items">
           {items.map((item) => (
             <CartItem key={item._id} {...item} />
           ))}
         </div>
-        <div className="cart__bottom">
-          <div className="cart__bottom-details"></div>
-          <div className="cart__buttons">
-            <div className="button button__pay">
-              <span>Pay now</span>
-            </div>
-            <Link className="button  button__back " to="/">
-              <span>Back</span>
-            </Link>
-          </div>
-        </div>
+        <div className="cart__bottom"></div>
       </div>
     </div>
   );

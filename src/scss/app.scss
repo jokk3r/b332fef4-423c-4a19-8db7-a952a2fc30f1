@@ -1,17 +1,54 @@
+@import 'libs/normalize';
+@import './variables';
 .App{
     position: relative;
 }
 .container{
     width: 70vw;
     margin: 0 auto;
+    margin-top: 100px;
 }
 .content{
-    &__title{}
-
-    &__items{
-      
-        width: 100%;
-      
+    &__title{
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 50px;
     }
 
+    &__items{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3vw;
+    }
+}
+
+.cart{
+    &__main{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    &__header{
+        display: flex;
+        align-items: center;
+    }
+    &__back{
+        margin-top: 4px;
+    }
+    &__title{
+        margin-left: 14px;
+        font-style: normal;
+        font-size: 30px;
+        font-weight: 700;
+    }
+    &__deleteAll{
+        color: $border;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        }
+    &__items{
+
+    }
 }

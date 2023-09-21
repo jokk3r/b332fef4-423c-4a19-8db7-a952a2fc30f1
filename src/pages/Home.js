@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+
 import { EventsMain } from '../components/EventsMain/EventsMain';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchEvents } from '../redux/slices/eventSlice';
 
 const Home = ({ searchValue, setSearchValue }) => {
-  const baseURL = 'https://teclead-ventures.github.io/data/london-events.json';
-
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
-
+  const dispatch = useDispatch();
+  const { items, status } = useSelector((state) => state.event);
+  const [firstDate, setFirstDate] = useState(0);
   useEffect(() => {
-    axios.get(baseURL).then((response) => {
-      setItems(response.data);
-      setLoading(false);
-      console.log(response.data);
-    });
+    getEvents();
   }, []);
+
+  const getEvents = async () => {
+    dispatch(fetchEvents());
+  };
 
   const dateConversion = items.map((obj) => {
     return { ...obj, date: new Date(obj.date) };
@@ -43,11 +43,31 @@ const Home = ({ searchValue, setSearchValue }) => {
 
   return (
     <div className="container">
-      <div className="dates">
-        <p>{}</p>
-      </div>
       <h2 className="content__title">Public Events</h2>
-      {loading === true ? (
+      {status === 'error' ? (
+        <div>
+          <h2>error on server side</h2>
+          <p>try again later</p>
+        </div>
+      ) : (
+        <div className="content__items">
+          {status === 'loading' ? (
+            <p>loading...</p>
+          ) : (
+            <>
+              {eventsObjGroup.map((obj, i) => (
+                <EventsMain
+                  key={i}
+                  {...obj}
+                  searchValue={searchValue}
+                  setSearchValue={setSearchValue}
+                />
+              ))}
+            </>
+          )}
+        </div>
+      )}
+      {/* {status === 'loading' ? (
         <p>loading...</p>
       ) : (
         <div className="content__items">
@@ -60,7 +80,7 @@ const Home = ({ searchValue, setSearchValue }) => {
             />
           ))}
         </div>
-      )}
+      )} */}
     </div>
   );
 };

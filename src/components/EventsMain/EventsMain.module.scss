@@ -1,15 +1,19 @@
 @import '../../scss/variables';
 
-.event {
-  &__wrapper {
-    width: 30vw;
+.events {
+  &__main {
+    
   }
-  &__block {
+  &__date {
+    color: $blue;
+    font-size: 18px;
+    font-weight: 700;
   }
-  &__title {
+  &__list {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
   }
-  &__bottom {
-  }
-  &__club {
-  }
+ 
 }

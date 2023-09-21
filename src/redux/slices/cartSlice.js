@@ -25,14 +25,14 @@ export const cartSlice = createSlice({
       }
     },
     minusItem(state, action) {
-      const findItem = state.items.find((obj) => obj.id === action.payload);
+      const findItem = state.items.find((obj) => obj._id === action.payload._id);
       if (findItem) {
         findItem.count--;
       }
     },
     removeItem(state, action) {
       console.log(action.payload);
-      state.items = state.items.filter((obj) => obj.id !== action.payload);
+      state.items = state.items.filter((obj) => obj._id !== action.payload._id);
     },
     clearItems(state) {
       state.items = [];

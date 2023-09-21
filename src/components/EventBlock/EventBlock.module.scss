@@ -1,0 +1,68 @@
+@import '../../scss/variables';
+
+.event{
+    &__wrapper{
+        width: 33vw;
+        height: 60vw;
+        border: 1px solid $border;
+        background: $white;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.08);
+    }
+
+    &__top{
+        display: flex;
+        align-items: center;
+        height: 85px;
+        width: 100%;
+        padding: 0 20px;
+    }
+    &__title{
+        margin-left: 15px;
+    }
+    &__imgBlock{
+        width: 33vw;
+        height: 40vw;
+    }
+    &__img{
+        width: 99%;
+        height: 100%;
+    }
+    &__info{
+        padding: 20px;
+    }
+    &__club{
+        display: flex;
+    }
+    &__clubName{
+        margin-left: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    &__date{
+        margin-top: 10px;
+        font-size: 14px;
+        color: $border;
+        font-weight: 400;
+    }
+    &__bottom{
+        width: 100%;
+        padding: 20px;
+        position: relative;
+    }
+    &__add{
+        padding: 11px;
+        background: #1976D2;
+        border-radius: 30px;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        right: 20px;
+    }
+    &__addImg{
+        width: 19px;
+        height: 16px;
+        margin-bottom: -1px;
+    }
+}

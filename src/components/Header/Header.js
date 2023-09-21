@@ -4,6 +4,7 @@ import styles from './Header.module.scss';
 import { Link } from 'react-router-dom';
 import { Search } from '../Search/Search';
 import { useSelector } from 'react-redux';
+import cart from '../../assets/img/cart.svg';
 
 const Header = ({ searchValue, setSearchValue }) => {
   const { items } = useSelector((state) => state.cart);
@@ -13,10 +14,10 @@ const Header = ({ searchValue, setSearchValue }) => {
   return (
     <div className={styles.header}>
       <Search searchValue={searchValue} setSearchValue={setSearchValue} />
-      <div className="header__cart">
+      <div className={styles.header__cart}>
         <Link to="/cart" className="button__cart">
-          <p>Cart</p>
-          <div className="header__cart--count">
+          <img src={cart} alt="cart" />
+          <div className={styles.header__cartCount}>
             <span>{totalCount}</span>
           </div>
         </Link>
