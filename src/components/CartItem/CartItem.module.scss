@@ -23,7 +23,7 @@
         flex-direction: column;
         margin-top: 30px;
         margin-left: 25px;
-        width:400px
+        width:30vw
     }
     &__date{
         color: $blue;
@@ -51,11 +51,22 @@
     }
     &__right{
         display: flex;
+        width: 30vw;
+        justify-content: space-between;
     }
-    &__countImg{
-        padding: 11px;
+    &__countImgBlock{
+        padding: 5px;
         border-radius: 30px;
         border: 1px solid $border;
+        
+    }
+    &__countImg{
+        padding: 4px;
+        padding-top: 0px;
+        padding-bottom: 1px;
+    }
+    &__countNumber{
+        margin: 0 20px;
     }
     &__delete{
         display: flex;
@@ -71,9 +82,6 @@
         align-items: center;
         width: 200px;
         height: 100%;
-    }
-    &__plus{
-        color: $black;
     }
 }
      

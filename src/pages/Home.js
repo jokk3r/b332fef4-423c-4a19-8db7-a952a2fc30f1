@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import { EventsMain } from '../components/EventsMain/EventsMain';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,7 +7,7 @@ import { fetchEvents } from '../redux/slices/eventSlice';
 const Home = ({ searchValue, setSearchValue }) => {
   const dispatch = useDispatch();
   const { items, status } = useSelector((state) => state.event);
-  const [firstDate, setFirstDate] = useState(0);
+
   useEffect(() => {
     getEvents();
   }, []);
@@ -67,20 +67,6 @@ const Home = ({ searchValue, setSearchValue }) => {
           )}
         </div>
       )}
-      {/* {status === 'loading' ? (
-        <p>loading...</p>
-      ) : (
-        <div className="content__items">
-          {eventsObjGroup.map((obj, i) => (
-            <EventsMain
-              key={i}
-              {...obj}
-              searchValue={searchValue}
-              setSearchValue={setSearchValue}
-            />
-          ))}
-        </div>
-      )} */}
     </div>
   );
 };

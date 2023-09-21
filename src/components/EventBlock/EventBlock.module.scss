@@ -3,7 +3,7 @@
 .event{
     &__wrapper{
         width: 33vw;
-        height: 60vw;
+      
         border: 1px solid $border;
         background: $white;
         box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.08);
@@ -49,6 +49,7 @@
         width: 100%;
         padding: 20px;
         position: relative;
+        padding-bottom: 40px;
     }
     &__add{
         padding: 11px;
@@ -57,12 +58,13 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        bottom: 0;
+        bottom: 20px;
         right: 20px;
     }
     &__addImg{
         width: 19px;
         height: 16px;
         margin-bottom: -1px;
+        
     }
 }

@@ -10,7 +10,6 @@ import Cart from './pages/Cart';
 const App = () => {
   const [searchValue, setSearchValue] = useState('');
 
-  console.log(searchValue + 'inputchanged');
   return (
     <div className="App">
       <Header searchValue={searchValue} setSearchValue={setSearchValue} />

@@ -23,7 +23,7 @@ const Cart = () => {
       <div className="cart">
         <div className="cart__main">
           <div className="cart__header">
-            <Link className="button__back " to="/">
+            <Link className="cart__back " to="/">
               <img src={left} alt="back" />
             </Link>
             <h2 className="cart__title"> Cart</h2>

@@ -1,9 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-/* import { getCartFromLS } from '../../utils/getCartFromLS'; */
-/* import { CartItem, CartSliceState } from './types';
-
-const { items} = getCartFromLS(); */
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   items: [],

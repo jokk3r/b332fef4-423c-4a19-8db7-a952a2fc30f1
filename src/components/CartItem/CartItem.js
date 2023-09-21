@@ -51,12 +51,12 @@ export const CartItem = ({ _id, title, date, count, clubName, img }) => {
 
       <div className={styles.cart__right}>
         <div className={styles.cart__count}>
-          <div className={styles.cart__countImg} onClick={onClickPlus}>
-            <img className={styles.cart__plus} src={plus} alt="plus" />
+          <div className={styles.cart__countImgBlock} onClick={onClickPlus}>
+            <img className={styles.cart__countImg} src={plus} alt="plus" />
           </div>
-          <p>{count}</p>
-          <div className={styles.cart__countImg} onClick={onClickMinus}>
-            <img src={minus} alt="minus" />
+          <p className={styles.cart__countNumber}>{count}</p>
+          <div className={styles.cart__countImgBlock} onClick={onClickMinus}>
+            <img className={styles.cart__countImg} src={minus} alt="minus" />
           </div>
         </div>
         <div onClick={onClickRemove} className={styles.cart__delete}>

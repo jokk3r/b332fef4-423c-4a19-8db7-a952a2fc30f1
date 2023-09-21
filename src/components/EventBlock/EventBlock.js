@@ -27,7 +27,6 @@ function EventBlock({ _id, startTime, endTime, flyerFront, title, venue }) {
       date: dateStartConvert,
     };
     dispatch(addItem(item));
-    console.log(item);
   };
   return (
     <div className={styles.event__wrapper}>
